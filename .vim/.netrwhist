@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/kaanozkan/cs343/a1'
+let g:netrw_dirhist_2='/Users/kaanozkan/.vim'
+let g:netrw_dirhist_3='/Users/kaanozkan'
+let g:netrw_dirhist_4='/Users/kaanozkan/cs343'
+let g:netrw_dirhist_5='/Users/kaanozkan/cs343/a2'
+let g:netrw_dirhist_6='/Users/kaanozkan/cs343'
+let g:netrw_dirhist_7='/Users/kaanozkan/cs343/a1'
+let g:netrw_dirhist_8='/Users/kaanozkan/.vim/pack'
