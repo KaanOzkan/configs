@@ -1,0 +1,13 @@
+Using MacVim currently for better colors. Also has some mac shortcuts. Use buffers instead of macvim tabs tho.
+
+Ctrl + d : while in buffer displays available completions. Although it doesn't seem to show shortcut names. You can get those through ":help :cmd_name"
+
+Currently using builtin netrw and :Vex :Sex :Ex as a file explorer. Might be worth to explore nerd tree in the future.
+
+- Need to incorporate fzf (+ ripgrep ?)
+
+- File name and string search within a project
+
+- Autocompletion
+
+
