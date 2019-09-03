@@ -1,3 +1,4 @@
 - How to upload a package to vim? Using Vim 8 package directory. Clone into ~/.vim/pack/git-plugins/start/
 
-- Using pure for zsh prompt
+- Using pure for zsh prompt, have to install that first
+- npm install --global pure-prompt
