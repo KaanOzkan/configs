@@ -1,13 +1,24 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH=/usr/local/bin:$HOME/bin:$PATH:$HOME/.cargo/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/kaanozkan/.oh-my-zsh
 
+# fzf
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="kaan"
+
+#ZSH_THEME="kaan"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -46,7 +57,8 @@ ZSH_THEME="kaan"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time# stamp shown in the history command output.
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
@@ -66,7 +78,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # USE PURE
 autoload -U promptinit; promptinit
+PURE_PROMPT_SYMBOL=λ
 prompt pure
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -99,3 +113,11 @@ function chpwd() {
     emulate -L zsh
     ls
 }
+
+alias stat="stat -x"
+alias v="vim"
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim -g" 
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
