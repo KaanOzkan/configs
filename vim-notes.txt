@@ -4,10 +4,10 @@ Ctrl + d : while in buffer displays available completions. Although it doesn't s
 
 Currently using builtin netrw and :Vex :Sex :Ex as a file explorer. Might be worth to explore nerd tree in the future.
 
-- Need to incorporate fzf (+ ripgrep ?)
-
-- File name and string search within a project
+- Need to incorporate fzf (+ ripgrep)
+    - File name search :Files
+    - String search :Rg
+    - https://github.com/junegunn/fzf.vim
 
 - Autocompletion
-
 
