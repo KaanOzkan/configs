@@ -3,6 +3,8 @@ syntax on
 
 " key remaps
 imap jk <Esc>
+imap kj <Esc>
+imap <C-f> <Right>
 
 " aliases
 :nnoremap cw ciw
@@ -12,6 +14,12 @@ imap jk <Esc>
 set autoindent
 set smartindent " trying out semantic indentation
 set ttimeoutlen=50 " for airline
+let mapleader = "."
+
+" Spell checking for .txt files
+autocmd BufRead,BufNewFile *.txt set filetype=text
+autocmd FileType text setlocal spell
+
 " use spaces instead of tabs"
 set tabstop=4
 set shiftwidth=4
@@ -48,6 +56,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'dkarter/bullets.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 " Reload .vimrc and :PlugInstall to install plugins
 

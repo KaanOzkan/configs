@@ -4,8 +4,8 @@ Ctrl + d : while in buffer displays available completions. Although it doesn't s
 
 Currently using builtin netrw and :Vex :Sex :Ex as a file explorer. Might be worth to explore nerd tree in the future.
 
-Comment using https://github.com/scrooloose/nerdcommenter
-    - ".cc" to comment current line ".c<space>" to toggle
+Comment using https://github.com/tpope/vim-commentary
+    - "gcc" to comment current line
 
 - fzf & ripgrep)
     - File name search :Files
