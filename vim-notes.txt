@@ -8,9 +8,10 @@ Comment using https://github.com/tpope/vim-commentary
     - "gcc" to comment current line
 
 - fzf & ripgrep)
-    - File name search :Files
-    - String search :Rg
+    - File name search :Files (;)
+    - String search :Rg (rg)
     - https://github.com/junegunn/fzf.vim
+    - Need to 'brew install rg'
 
 - Autocompletion
 
