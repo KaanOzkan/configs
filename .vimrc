@@ -32,6 +32,7 @@ set autochdir
 set ignorecase
 set mouse=a
 set autoread
+set linespace=4
 
 " cursor blink
 set guicursor=a:blinkon0
