@@ -1,5 +1,6 @@
 Using MacVim currently for better colors. Also has some mac shortcuts. Use buffers instead of macvim tabs tho.
-
+    - Previous tab: Cmd + Shift + [
+    - Next tab: Cmd + Shift + ]
 Ctrl + d : while in buffer displays available completions. Although it doesn't seem to show shortcut names. You can get those through ":help :cmd_name"
 
 Currently using builtin netrw and :Vex :Sex :Ex as a file explorer. Might be worth to explore nerd tree in the future.
