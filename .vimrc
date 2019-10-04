@@ -11,6 +11,7 @@ imap <C-f> <Right>
 :nnoremap dw diw
 " Set fzf keybinding
 map ; :Files<CR>
+map rg :Rg<CR>
 
 " settings
 set autoindent
