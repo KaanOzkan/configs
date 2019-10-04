@@ -15,3 +15,4 @@ Comment using https://github.com/tpope/vim-commentary
 
 - Autocompletion
 
+- Learn to enable the syntax checker plugin
