@@ -9,6 +9,8 @@ imap <C-f> <Right>
 " aliases
 :nnoremap cw ciw
 :nnoremap dw diw
+" Set fzf keybinding
+map ; :Files<CR>
 
 " settings
 set autoindent
@@ -51,12 +53,13 @@ augroup END
 
 " plugins
 call plug#begin('~/.vim/plugged')
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'dkarter/bullets.vim'
-Plug 'tpope/vim-commentary'
+Plug 'drewtempelmeyer/palenight.vim' " This pretty theme
+Plug 'itchyny/lightline.vim' " Informational footer bar
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy search
+Plug 'junegunn/fzf.vim' " Fuzzy search vim integration
+Plug 'dkarter/bullets.vim' " Automated bullet lists
+Plug 'tpope/vim-commentary' " Comments
+Plug 'scrooloose/syntastic' " Syntax checker
 call plug#end()
 " Reload .vimrc and :PlugInstall to install plugins
 
