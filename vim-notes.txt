@@ -17,3 +17,7 @@ Comment using https://github.com/tpope/vim-commentary
 - Autocompletion
 
 - Learn to enable the syntax checker plugin
+
+- Split Panes
+    - "Ctrl-w v" for vertical split "Ctrl-w s" for horizontal
+    - "Ctrl-hjkl" to move between them

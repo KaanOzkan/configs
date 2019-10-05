@@ -7,11 +7,16 @@ imap kj <Esc>
 imap <C-f> <Right>
 
 " aliases
-:nnoremap cw ciw
-:nnoremap dw diw
+nnoremap cw ciw
+nnoremap dw diw
 " Set fzf keybinding
 map ; :Files<CR>
 map rg :Rg<CR>
+" Window splits
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 
 " settings
 set autoindent
