@@ -23,6 +23,8 @@ set autoindent
 set smartindent " trying out semantic indentation
 set ttimeoutlen=50 " for airline
 let mapleader = ","
+set number
+set relativenumber
 
 " Spell checking for .txt files
 autocmd BufRead,BufNewFile *.txt set filetype=text
