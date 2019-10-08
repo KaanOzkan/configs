@@ -21,3 +21,8 @@ Comment using https://github.com/tpope/vim-commentary
 - Split Panes
     - "Ctrl-w v" for vertical split "Ctrl-w s" for horizontal
     - "Ctrl-hjkl" to move between them
+
+- Buffers
+    - "gn" next buffer
+    - "gd" delete buffer
+    - "gp" previous buffer

@@ -17,6 +17,9 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
 
 " settings
 set autoindent
