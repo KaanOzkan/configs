@@ -20,6 +20,7 @@ nnoremap <C-L> <C-W>l
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+nnoremap <esc> :noh<return><esc>
 
 " settings
 set autoindent
@@ -28,7 +29,7 @@ set ttimeoutlen=50 " for airline
 let mapleader = ","
 set number
 set relativenumber
-
+set hlsearch
 " Spell checking for .txt files
 autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd FileType text setlocal spell
@@ -89,7 +90,7 @@ let g:netrw_winsize = 50
 " bullet
 let g:bullets_enabled_file_types = ['text']
 
-" :Find using rg
+" :Find using rg ==== IDK If we need this anymore
 " --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results
