@@ -66,22 +66,24 @@ augroup END
 
 " plugins
 call plug#begin('~/.vim/plugged')
-Plug 'drewtempelmeyer/palenight.vim' " This pretty theme
+Plug 'drewtempelmeyer/palenight.vim' " Theme
+Plug 'axvr/photon.vim' " Theme
 Plug 'itchyny/lightline.vim' " Informational footer bar
+Plug 'sainnhe/lightline_foobar.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy search
 Plug 'junegunn/fzf.vim' " Fuzzy search vim integration
 Plug 'dkarter/bullets.vim' " Automated bullet lists
 Plug 'tpope/vim-commentary' " Comments
 Plug 'scrooloose/syntastic' " Syntax checker
 call plug#end()
-" Reload .vimrc and :PlugInstall to install plugins
+" Reload .vimrc (:so %) and :PlugInstall to install plugins
 
-" palenight
-let g:palenight_terminal_italics=1
-let g:lightline = { 'colorscheme': 'palenight' }
+" theme
+" let g:palenight_terminal_italics=1
+let g:lightline = { 'colorscheme': 'space_vim_dark' }
 set laststatus=2
 set termguicolors
-colorscheme palenight
+colorscheme photon
 
 " netrw settings
 let g:netrw_liststyle = 3
@@ -102,3 +104,11 @@ let g:bullets_enabled_file_types = ['text']
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+" Trim whitespace on save
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+autocmd BufWritePre * :call TrimWhitespace()
