@@ -33,6 +33,8 @@ set hlsearch
 " Spell checking for .txt files
 autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd FileType text setlocal spell
+" Save upon leaving insert mode
+autocmd InsertLeave * write
 
 " use spaces instead of tabs"
 set tabstop=4
