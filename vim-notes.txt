@@ -26,3 +26,6 @@ Comment using https://github.com/tpope/vim-commentary
     - "gn" next buffer
     - "gd" delete buffer
     - "gp" previous buffer
+
+- Folding
+    - "z+a" fold
