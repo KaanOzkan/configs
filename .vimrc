@@ -57,6 +57,12 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" folding (z + a)
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " Open quickfix window when command populates quickfix list
 augroup qf
     autocmd!
@@ -80,18 +86,18 @@ Plug 'scrooloose/syntastic' " Syntax checker
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
-" theme
 " let g:palenight_terminal_italics=1
 let g:lightline = { 'colorscheme': 'space_vim_dark' }
-set laststatus=2
+set laststatus=0 " Disabled lightline
 set termguicolors
-colorscheme photon
+colorscheme desert
+hi NonText guifg=bg
 
 " netrw settings
 let g:netrw_liststyle = 3
 " let g:netrw_banner = 0 " remove banner
 let g:netrw_winsize = 50
-" bullet
+" bullet points
 let g:bullets_enabled_file_types = ['text']
 
 " :Find using rg ==== IDK If we need this anymore
