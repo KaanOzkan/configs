@@ -91,7 +91,11 @@ let g:lightline = { 'colorscheme': 'space_vim_dark' }
 set laststatus=0 " Disabled lightline
 set termguicolors
 colorscheme desert
+
+" Configure desert theme, doesnt play well with ruby
 hi NonText guifg=bg
+hi Identifier guifg=white
+hi PreProc guifg=khaki
 
 " netrw settings
 let g:netrw_liststyle = 3
