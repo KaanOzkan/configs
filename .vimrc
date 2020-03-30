@@ -64,15 +64,20 @@ set nofoldenable
 set foldlevel=2
 
 " Open quickfix window when command populates quickfix list
-augroup qf
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    cwindow
-    autocmd VimEnter        *     cwindow
-augroup END
-
+" augroup qf
+"     autocmd!
+"     autocmd QuickFixCmdPost [^l]* cwindow
+"     autocmd QuickFixCmdPost l*    cwindow
+"     autocmd VimEnter        *     cwindow
+" augroup END
 
 " plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'drewtempelmeyer/palenight.vim' " Theme
 Plug 'axvr/photon.vim' " Theme
@@ -83,6 +88,7 @@ Plug 'junegunn/fzf.vim' " Fuzzy search vim integration
 Plug 'dkarter/bullets.vim' " Automated bullet lists
 Plug 'tpope/vim-commentary' " Comments
 Plug 'scrooloose/syntastic' " Syntax checker
+Plug 'fatih/vim-go' " golang support
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
@@ -103,6 +109,9 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 50
 " bullet points
 let g:bullets_enabled_file_types = ['text']
+
+" syntastic
+let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
 
 " :Find using rg ==== IDK If we need this anymore
 " --column: Show column number

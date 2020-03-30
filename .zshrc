@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH=/usr/local/bin:$HOME/bin:$PATH:$HOME/.cargo/bin
+PATH="/Library/Python/3.7/bin:${PATH}"
+export PATH=/usr/local/opt/postgresql@11/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$PATH:$HOME/.cargo/bin:
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/kaanozkan/.oh-my-zsh
@@ -117,9 +118,7 @@ function chpwd() {
 alias stat="stat -x"
 alias v="vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+alias gst="git st"
+alias ga="git add -p"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
