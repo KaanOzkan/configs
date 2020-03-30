@@ -109,9 +109,10 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 50
 " bullet points
 let g:bullets_enabled_file_types = ['text']
-
 " syntastic
 let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+" vim-go
+let g:go_gopls_enabled = 0
 
 " :Find using rg ==== IDK If we need this anymore
 " --column: Show column number
