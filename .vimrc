@@ -89,6 +89,7 @@ Plug 'dkarter/bullets.vim' " Automated bullet lists
 Plug 'tpope/vim-commentary' " Comments
 Plug 'scrooloose/syntastic' " Syntax checker
 Plug 'fatih/vim-go' " golang support
+Plug 'rust-lang/rust.vim' "rust support
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
