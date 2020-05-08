@@ -90,6 +90,7 @@ Plug 'tpope/vim-commentary' " Comments
 Plug 'scrooloose/syntastic' " Syntax checker
 Plug 'fatih/vim-go' " golang support
 Plug 'rust-lang/rust.vim' "rust support
+Plug 'tpope/vim-endwise' "end block keywords for many languages
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
