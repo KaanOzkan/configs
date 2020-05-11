@@ -5,6 +5,7 @@ syntax on
 imap jk <Esc>
 imap kj <Esc>
 imap <C-f> <Right>
+map ll :ll<CR>
 
 " aliases
 nnoremap cw ciw
@@ -89,8 +90,9 @@ Plug 'dkarter/bullets.vim' " Automated bullet lists
 Plug 'tpope/vim-commentary' " Comments
 Plug 'scrooloose/syntastic' " Syntax checker
 Plug 'fatih/vim-go' " golang support
-Plug 'rust-lang/rust.vim' "rust support
-Plug 'tpope/vim-endwise' "end block keywords for many languages
+Plug 'rust-lang/rust.vim' " rust support
+Plug 'tpope/vim-endwise' " end block keywords for many languages
+Plug 'Valloric/YouCompleteMe' " autocompletion. Need to go into /Plugged/YouCompleteMe/ and run 'python3 install.py --all'
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
@@ -117,6 +119,10 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '--std=c++11'
 " vim-go
 let g:go_gopls_enabled = 0
+" ycm (<C-space> to trigger in insert mode)
+let g:ycm_auto_trigger = 0
+let g:ycm_always_populate_location_list = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/cpp/.ycm_extra_conf.py'
 
 " :Find using rg ==== IDK If we need this anymore
 " --column: Show column number
