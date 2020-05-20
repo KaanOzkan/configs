@@ -1,0 +1,4 @@
+[alias]
+	st = status
+	co = checkout
+    a = add -p
