@@ -836,7 +836,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1371 615 650 467 0 0 2048 1280 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>683 274 570 392 0 0 2048 1280 </string>
+	<string>683 189 650 467 0 0 2048 1280 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1277 200 650 467 0 0 2048 1280 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1427,7 +1427,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1582,7 +1582,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1617,12 +1617,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2048, 1280}}</string>
 		<key>topLeft</key>
-		<string>{647, 911}</string>
+		<string>{1094, 1062}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>B8D49CA7-3F81-4896-90F1-46540A8E310C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>5</integer>
+	<integer>6</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2383,7 +2383,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-19T16:51:47Z</date>
+	<date>2020-05-23T18:38:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

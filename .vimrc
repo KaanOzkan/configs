@@ -5,7 +5,7 @@ syntax on
 imap jk <Esc>
 imap kj <Esc>
 imap <C-f> <Right>
-map ll :ll<CR>
+map L :ll<CR>
 
 " aliases
 nnoremap cw ciw
@@ -92,7 +92,10 @@ Plug 'scrooloose/syntastic' " Syntax checker
 Plug 'fatih/vim-go' " golang support
 Plug 'rust-lang/rust.vim' " rust support
 Plug 'tpope/vim-endwise' " end block keywords for many languages
-Plug 'Valloric/YouCompleteMe' " autocompletion. Need to go into /Plugged/YouCompleteMe/ and run 'python3 install.py --all'
+" Plug 'Valloric/YouCompleteMe' " autocompletion.
+Plug 'tpope/vim-rails'  " rails support
+Plug 'peterrincker/vim-argumentative' " modify arg ordering, using <, and >,
+
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
 
@@ -161,4 +164,6 @@ if has("gui_macvim")
   " Command-0 goes to the last tab
   noremap <D-0> :tablast<CR>
 endif
+
+runtime macros/matchit.vim
 
