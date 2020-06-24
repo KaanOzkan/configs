@@ -1,6 +1,15 @@
 filetype plugin indent on
 syntax on
 
+" settings
+set autoindent
+set smartindent " trying out semantic indentation
+set ttimeoutlen=50 " for airline
+let mapleader = ","
+set number
+set relativenumber
+set hlsearch
+
 " key remaps
 imap jk <Esc>
 imap kj <Esc>
@@ -13,6 +22,10 @@ nnoremap dw diw
 " Set fzf keybinding
 map ; :Files<CR>
 map rg :Rg<CR>
+nmap <Leader>/ <Plug>RgRawSearch
+vmap <Leader>/ <Plug>RgRawVisualSelection
+nmap <Leader>* <Plug>RgRawWordUnderCursor
+
 " Window splits
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
@@ -23,14 +36,7 @@ map gp :bp<cr>
 map gd :bd<cr>
 nnoremap <esc> :noh<return><esc>
 
-" settings
-set autoindent
-set smartindent " trying out semantic indentation
-set ttimeoutlen=50 " for airline
-let mapleader = ","
-set number
-set relativenumber
-set hlsearch
+
 " Spell checking for .txt files
 autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd FileType text setlocal spell
@@ -95,6 +101,7 @@ Plug 'tpope/vim-endwise' " end block keywords for many languages
 " Plug 'Valloric/YouCompleteMe' " autocompletion.
 Plug 'tpope/vim-rails'  " rails support
 Plug 'peterrincker/vim-argumentative' " modify arg ordering, using <, and >,
+Plug 'jesseleite/vim-agriculture' " send options to :Rg
 
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
@@ -120,6 +127,7 @@ let g:bullets_enabled_file_types = ['text']
 let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '--std=c++11'
+let g:syntastic_always_populate_loc_list = 1
 " vim-go
 let g:go_gopls_enabled = 0
 " ycm (<C-space> to trigger in insert mode)
@@ -138,7 +146,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/cpp/.ycm_extra_c
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " Trim whitespace on save
 fun! TrimWhitespace()
@@ -166,4 +174,11 @@ if has("gui_macvim")
 endif
 
 runtime macros/matchit.vim
+
+augroup format_ruby
+  autocmd Syntax ruby syn region sorbetSig start='sig {' end='}'
+  autocmd Syntax ruby syn region sorbetSigDo start='sig do' end='end'
+  autocmd Syntax ruby hi def link sorbetSig Comment
+  autocmd Syntax ruby hi def link sorbetSigDo Comment
+augroup END
 
