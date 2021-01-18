@@ -14,8 +14,6 @@ Comment using https://github.com/tpope/vim-commentary
     - https://github.com/junegunn/fzf.vim
     - Need to 'brew install rg'
 
-- Autocompletion
-
 - Learn to enable the syntax checker plugin
 
 - Split Panes
@@ -23,9 +21,13 @@ Comment using https://github.com/tpope/vim-commentary
     - "Ctrl-hjkl" to move between them
 
 - Buffers
-    - "gn" next buffer
-    - "gd" delete buffer
-    - "gp" previous buffer
+    - "bn" next buffer
+    - "bd" delete buffer
+    - "bp" previous buffer
 
 - Folding
     - "z+a" fold
+
+- coc
+    - coc-settings.json file should be in ~/.vim/coc-settings.json
+    - Current config disable autocompletion window and sets up sorbet lsp client

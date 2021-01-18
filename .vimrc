@@ -15,6 +15,7 @@ imap jk <Esc>
 imap kj <Esc>
 imap <C-f> <Right>
 map L :ll<CR>
+" nnoremap <esc> :noh<return><esc>
 
 " aliases
 nnoremap cw ciw
@@ -31,10 +32,10 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>
-nnoremap <esc> :noh<return><esc>
+" Buffer
+map bn :bn<cr>
+map bp :bp<cr>
+map bd :bd<cr>
 
 
 " Spell checking for .txt files
@@ -58,7 +59,7 @@ set linespace=4
 set guicursor=a:blinkon0
 
 " Auto close
-inoremap ( ()<left>
+" inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
@@ -102,6 +103,8 @@ Plug 'tpope/vim-endwise' " end block keywords for many languages
 Plug 'tpope/vim-rails'  " rails support
 Plug 'peterrincker/vim-argumentative' " modify arg ordering, using <, and >,
 Plug 'jesseleite/vim-agriculture' " send options to :Rg
+Plug 'yorickpeterse/vim-paper'
+Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
@@ -110,12 +113,14 @@ call plug#end()
 let g:lightline = { 'colorscheme': 'space_vim_dark' }
 set laststatus=0 " Disabled lightline
 set termguicolors
-colorscheme desert
+color paper
+
+
 
 " Configure desert theme, doesnt play well with ruby
-hi NonText guifg=bg
-hi Identifier guifg=white
-hi PreProc guifg=khaki
+" hi NonText guifg=bg
+" hi Identifier guifg=white
+" hi PreProc guifg=khaki
 
 " netrw settings
 let g:netrw_liststyle = 3
@@ -134,6 +139,8 @@ let g:go_gopls_enabled = 0
 let g:ycm_auto_trigger = 0
 let g:ycm_always_populate_location_list = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/cpp/.ycm_extra_conf.py'
+" rust.vim
+let g:rustfmt_autosave = 1
 
 " :Find using rg ==== IDK If we need this anymore
 " --column: Show column number
@@ -182,3 +189,9 @@ augroup format_ruby
   autocmd Syntax ruby hi def link sorbetSigDo Comment
 augroup END
 
+" Searches should show match count
+set shortmess-=S
+
+" coc configs
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
