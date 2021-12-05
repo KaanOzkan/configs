@@ -1,10 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-PATH="/Library/Python/3.7/bin:${PATH}"
 export PATH=/usr/local/opt/postgresql@11/bin:$PATH
 export PATH=/usr/local/bin:$HOME/bin:$PATH:$HOME/.cargo/bin:
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kaanozkan/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # fzf
 # --files: List files that would be searched but do not search
@@ -76,13 +76,15 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
 # USE PURE
+fpath+=~/.zsh/pure
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
 prompt pure
 
 # User configuration
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #export PATH = /opt/local/bin
@@ -90,11 +92,11 @@ prompt pure
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -117,8 +119,22 @@ function chpwd() {
 
 alias stat="stat -x"
 alias v="vim"
+alias vi="vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
 alias gst="git st"
 alias ga="git add -p"
+alias c="cargo"
+alias cr="cargo run"
+alias cb="cargo build"
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+ZSH_DISABLE_COMPFIX=true
+source $ZSH/oh-my-zsh.sh
+export GOPATH=$HOME
+export CPPFLAGS="-I/usr/local/opt/ruby/include -Wno-nullability-completeness"
+
+# Has to be the last line
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

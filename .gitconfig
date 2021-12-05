@@ -2,3 +2,25 @@
 	st = status
 	co = checkout
     a = add -p
+    pul = pull
+[user]
+	email = kaanozkan97@gmail.com
+	name = Kaan Ozkan
+[core]
+	commitGraph = true
+	editor = vim
+	excludesfile = /Users/kaanozkan/.gitignore
+[diff]
+	algorithm = patience
+[gc]
+	writeCommitGraph = true
+[protocol]
+	version = 2
+[pull]
+	ff = only
+[merge]
+conflictstyle = diff3
+[init]
+	defaultBranch = main
+[help]
+	autoCorrect = prompt

@@ -26,6 +26,7 @@ map rg :Rg<CR>
 nmap <Leader>/ <Plug>RgRawSearch
 vmap <Leader>/ <Plug>RgRawVisualSelection
 nmap <Leader>* <Plug>RgRawWordUnderCursor
+map == gg=<S-g><C-o><C-o>
 
 " Window splits
 nnoremap <C-J> <C-W>j
@@ -33,9 +34,9 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 " Buffer
-map bn :bn<cr>
-map bp :bp<cr>
-map bd :bd<cr>
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
 
 
 " Spell checking for .txt files
@@ -59,11 +60,21 @@ set linespace=4
 set guicursor=a:blinkon0
 
 " Auto close
-" inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
+" inoremap | ||<Left>
+inoremap { {}<Left>
+inoremap {} {}<Left>
+inoremap {<Enter> {<CR>}<ESC><S-o>
+inoremap ( ()<Left>
+inoremap () ()<Left>
+inoremap (<Enter> (<CR>)<ESC><S-o>
+inoremap [ []<Left>
+inoremap [] []<Left>
+inoremap [<Enter> [<CR>]<ESC><S-o>
+inoremap <> <><Left>
+inoremap '' ''<LEFT>
+inoremap "" ""<LEFT>
 
 " folding (z + a)
 set foldmethod=indent
@@ -103,8 +114,10 @@ Plug 'tpope/vim-endwise' " end block keywords for many languages
 Plug 'tpope/vim-rails'  " rails support
 Plug 'peterrincker/vim-argumentative' " modify arg ordering, using <, and >,
 Plug 'jesseleite/vim-agriculture' " send options to :Rg
-Plug 'yorickpeterse/vim-paper'
-Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+" Plug 'yorickpeterse/vim-paper' " theme
+Plug 'morhetz/gruvbox' " theme
+Plug 'cjhutchi/vim-sorbet', { 'branch': 'main' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 
 call plug#end()
 " Reload .vimrc (:so %) and :PlugInstall to install plugins
@@ -113,8 +126,9 @@ call plug#end()
 let g:lightline = { 'colorscheme': 'space_vim_dark' }
 set laststatus=0 " Disabled lightline
 set termguicolors
-color paper
 
+color gruvbox
+" set bg=light
 
 
 " Configure desert theme, doesnt play well with ruby
@@ -182,16 +196,13 @@ endif
 
 runtime macros/matchit.vim
 
-augroup format_ruby
-  autocmd Syntax ruby syn region sorbetSig start='sig {' end='}'
-  autocmd Syntax ruby syn region sorbetSigDo start='sig do' end='end'
-  autocmd Syntax ruby hi def link sorbetSig Comment
-  autocmd Syntax ruby hi def link sorbetSigDo Comment
-augroup END
-
 " Searches should show match count
 set shortmess-=S
 
 " coc configs
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nmap <silent> gh <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
