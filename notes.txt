@@ -1,10 +1,9 @@
+install homebrew from their homepage command
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-npm install --global pure-prompt
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+https://github.com/sindresorhus/pure#manually
 :PlugInstall in .vimrc
-install python3 through pyenv
-https://github.com/ycm-core/YouCompleteMe#installation
 https://github.com/microsoft/cascadia-code/releases download and instal CascadiaMonoPL.otf
 brew install ripgrep
 brew install fzf
