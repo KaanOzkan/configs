@@ -2,6 +2,7 @@
 export PATH=/usr/local/opt/postgresql@11/bin:$PATH
 export PATH=/usr/local/bin:$HOME/bin:$PATH:$HOME/.cargo/bin:
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -121,11 +122,14 @@ alias stat="stat -x"
 alias v="vim"
 alias vi="vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
+alias mvim="vim"
 alias gst="git st"
 alias ga="git add -p"
 alias c="cargo"
 alias cr="cargo run"
 alias cb="cargo build"
+alias b="bundle"
+alias be="bundle exec"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
