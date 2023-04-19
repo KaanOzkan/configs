@@ -50,7 +50,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
-set autochdir
 set ignorecase
 set mouse=a
 set autoread
@@ -116,7 +115,6 @@ Plug 'peterrincker/vim-argumentative' " modify arg ordering, using <, and >,
 Plug 'jesseleite/vim-agriculture' " send options to :Rg
 " Plug 'yorickpeterse/vim-paper' " theme
 Plug 'morhetz/gruvbox' " theme
-Plug 'cjhutchi/vim-sorbet', { 'branch': 'main' }
 " Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 
 call plug#end()
