@@ -1,0 +1,4 @@
+Using kickstart.vim
+Currently in terminal. You can set the background color from iterm2 profile to same one as the nvim theme.
+Clangd is the cpp LSP and requires a `compile_commands.json` file. For simple projects supplying bear with a Makefile works smoothly: https://github.com/rizsotto/Bear
+
