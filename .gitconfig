@@ -24,3 +24,5 @@ conflictstyle = diff3
 	defaultBranch = main
 [help]
 	autoCorrect = prompt
+[include]
+	path = /Users/kaanozkan/.config/dev/gitconfig
